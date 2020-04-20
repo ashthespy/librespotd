@@ -2,6 +2,7 @@
 name = "librespotd"
 version = "0.1.0"
 authors = ["Sasha Hilton <sashahilton00@gmail.com>"]
+edition = "2018"
 
 [[bin]]
 name = "librespotd"
@@ -9,17 +10,17 @@ path = "src/main.rs"
 doc = false
 
 [dependencies]
-env_logger = "0.4.0"
-futures = "0.1.8"
-getopts = "0.2.14"
-hyper = "0.11.2"
-librespot = { git = "https://github.com/librespot-org/librespot", rev="8f8eb8c" }
-log = "0.3.5"
-rpassword = "0.3.0"
-rust-crypto = "0.2.36"
-tokio-core = "0.1.2"
-tokio-io = "0.1"
-tokio-signal = "0.1.2"
+env_logger =  { version = "0.7.1", default-features = false, features = ["termcolor","humantime","atty"] } 
+futures = "0.1"
+getopts = "0.2.21"
+hex = "0.4.2"
+log = "0.4.8"
+rpassword = "4.0.5"
+sha-1 = "0.8.2"
+tokio-core = "0.1.17"
+tokio-io = "0.1.13"
+tokio-process = "0.2.5"
+tokio-signal = "0.2.9"
+url = "1.7.2"
 
-[replace]
-"rust-crypto:0.2.36" = { git = "https://github.com/awmath/rust-crypto.git", branch = "avx2" }
+librespot = { git = "https://github.com/librespot-org/librespot", branch ="dev" }
